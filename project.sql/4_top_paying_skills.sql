@@ -4,6 +4,11 @@ Answer: What are the top skills based on salary?
 - Focuses on roles with specified salaries, regardless of location
 - Why? It reveals how different skills impact salary levels for Data Analysts and 
     helps identify the most financially rewarding skills to acquire or improve
+
+This query calculates the average salary from the job_postings_fact table and joins it with the skills_job_dim and skills_dim tables to retrieve the skills associated with job postings.
+It filters the data to include only Data Analyst roles with a non-null salary value.
+
+The results are then grouped by skill, and the average salary is calculated for each one. Finally, the query returns the top 10 highest-paying skills.
 */
 
 
