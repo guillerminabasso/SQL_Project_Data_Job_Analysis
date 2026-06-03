@@ -14,12 +14,10 @@ WITH top_paying_jobs AS (
         name AS company
     FROM 
         job_postings_fact
-    LEFT JOIN 
-        company_dim ON 
+    LEFT JOIN company_dim ON 
         job_postings_fact.company_id = company_dim.company_id
     WHERE 
-        salary_year_avg IS NOT NULL
-    AND 
+        salary_year_avg IS NOT NULL AND 
         job_work_from_home IS TRUE AND 
         job_title_short = 'Data Analyst'
     ORDER BY 
@@ -28,8 +26,7 @@ WITH top_paying_jobs AS (
     )
 
 SELECT
-    AVG(salary),
-    COUNT(*),
+    COUNT(*) as skills_count,
     skills
 FROM top_paying_jobs
 INNER JOIN skills_job_dim ON 
@@ -39,9 +36,12 @@ INNER JOIN skills_dim ON
 GROUP BY 
     skills
 ORDER BY 
-    count DESC
+    skills_count DESC
+
+
 
 /* Conclusions:
+
 - The most demanded skill for the 10 best-paying jobs is SQL
 with more than 8 out of 10 job offers demanding for it
 - The second most demanded skill is Python with 7 out of 10
@@ -54,3 +54,5 @@ skills with 3 job offers demanding for them
 The results of this query were exported in a csv file
 ir order to look at them in Excel and building a chart
 to better ilustrate the results */
+
+
