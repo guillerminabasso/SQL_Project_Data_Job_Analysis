@@ -2,3 +2,7 @@
 /Untitled-1.sql
 /csv_files
 .DS_Store
+datasets/company_dim.csv
+datasets/job_postings_fact.csv
+datasets/skills_dim.csv
+datasets/skills_job_dim.csv
