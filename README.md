@@ -1,5 +1,5 @@
 # SQL Project Data Job Analysis
-TO DO: Update the content of this later
+
 
 ## 4. Top Paying Skills Analysis
 
@@ -27,7 +27,7 @@ LIMIT 10
 - The findings suggest that higher-paying Data Analyst roles increasingly require technical skills that bridge analytics, engineering, and data science.
 - Developing expertise in programming, cloud technologies, and data engineering concepts may lead to access to higher-paying opportunities.
 
-### Drill-Down Analysis
+### 🔎 Drill-Down Analysis
 
 After identifying the top 10 highest-paying skills for Data Analyst roles, I performed a drill-down analysis to explore the job titles associated with these skills. This provided additional context beyond salary rankings and helped identify the types of roles driving higher compensation.
 
@@ -65,7 +65,7 @@ ORDER BY ts.salary DESC;
 
 ```
 
-### Background Dataset
+### 🗂️ Background Dataset
 
 The drill-down query returned more than 30,000 rows.
 Due to the size of the dataset, the results were exported to Excel for further aggregation and visualization.
@@ -74,11 +74,9 @@ This allowed for a more flexible analysis of skill frequency and salary distribu
 <img width="551" height="365" alt="image" src="https://github.com/user-attachments/assets/9525df5b-cdfa-4c06-834b-1b2631080012" />
 
 
-### Excel Analysis
+### 📈 Excel Analysis
 
-
-
-#### Functions Used
+#### ⚙️Functions Used
 
 **COUNTIF** was used to calculate the number of job postings associated with each skill.
 
