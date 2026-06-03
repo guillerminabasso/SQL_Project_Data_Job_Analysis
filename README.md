@@ -65,11 +65,18 @@ ORDER BY ts.salary DESC;
 
 ```
 
-Because the resulting dataset contained more than 30,000 rows, the data was exported to Excel for further aggregation and visualization. This enabled a more detailed analysis of job title distribution and salary patterns across the highest-paying skills.
+### Background Dataset
+
+The drill-down query returned more than 30,000 rows.
+Due to the size of the dataset, the results were exported to Excel for further aggregation and visualization.
+This allowed for a more flexible analysis of skill frequency and salary distribution at a granular level.
+
+<img width="551" height="365" alt="image" src="https://github.com/user-attachments/assets/9525df5b-cdfa-4c06-834b-1b2631080012" />
+
 
 ### Excel Analysis
 
-<img width="203" height="160" alt="image" src="https://github.com/user-attachments/assets/ba44b4f1-ef21-42bc-9ff0-9c7e504e92aa" />
+
 
 #### Functions Used
 
@@ -82,9 +89,28 @@ Because the resulting dataset contained more than 30,000 rows, the data was expo
 **MEDIAN** and **FILTER** were used to calculate the median salary associated with each skill.
 
 ```
+
+
 =MEDIAN(FILTER(top_skills[salary], top_skills[skills]=D2))
 
 ```
+
+<img width="200" height="160" alt="image" src="https://github.com/user-attachments/assets/03101759-ee5b-4c47-95bb-5dbe6ba27385" />  
+
+### 📈 Visualization
+
+The following combo chart was used to clearly illustrate the relationship between median salaries and skill demand across the top skills.
+
+<img width="360" height="217" alt="image" src="https://github.com/user-attachments/assets/91a091da-ad01-4877-a9f1-7fb9059dacb7" />  
+
+### 💡 Insights
+
+SVN appears to be the highest-paying skill, with median salaries reaching up to $400K. However, it shows relatively low demand, with only around 1,000 job postings, indicating that it is a niche skill in the job market.
+
+On the other hand, Terraform stands out as the most in-demand skill, with approximately 20,000 job postings and a median salary of around $150K, reflecting strong demand in cloud-related roles.
+
+Overall, the chart highlights a clear trade-off between salary and demand: while SVN leads in compensation, it is highly specialized and less frequently required. In contrast, most other top skills cluster within a similar salary range of $100K–$200K, with Terraform emerging as the most widely requested skill among employers.
+
 
 
 
