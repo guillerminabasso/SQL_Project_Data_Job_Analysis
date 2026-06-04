@@ -6,7 +6,7 @@
 This query calculates the average salary for each skill by joining the job_postings_fact, skills_job_dim, and skills_dim tables.
 It filters the dataset to include only Data Analyst roles with a valid salary value, and then computes the average salary per skill, returning the top 10 highest-paying skills.
 
-```
+```sql
 SELECT 
     skills,
     ROUND(AVG(salary_year_avg),0) AS salary
@@ -33,8 +33,9 @@ After identifying the top 10 highest-paying skills for Data Analyst roles, I per
 
 The following query retrieves all job postings associated with the top-paying skills, allowing for a deeper analysis of job title distribution and salary patterns.  
 
-```
+```sql
 WITH top_skills AS (
+
     SELECT 
         skills_dim.skill_id,
         skills,
