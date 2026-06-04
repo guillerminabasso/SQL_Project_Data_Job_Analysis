@@ -55,6 +55,8 @@ LIMIT 10
 ```
 Here's the breakdown of the top data analyst jobs in 2023:
 
+EXCEL BAR CHART SALARY DIST
+
 * Nine out of the ten highest-paying remote Data Analyst positions in the dataset are offered by U.S.-based companies.
 * The highest reported salary ($650,000) may represent a potential outlier, as it is substantially higher than the second-highest salary ($335,000) and the rest of the dataset.
 * Excluding this potential outlier, the salary range among the remaining top-paying positions is considerably more consistent.
