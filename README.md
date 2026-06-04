@@ -291,5 +291,44 @@ On the other hand, Terraform stands out as the most in-demand skill, with approx
 Overall, the chart highlights a clear trade-off between salary and demand: while SVN leads in compensation, it is highly specialized and less frequently required. In contrast, most other top skills cluster within a similar salary range of $100K–$200K, with Terraform emerging as the most widely requested skill among employers.
 
 
+### 5. Most Optimal Skills to Learn
+
+By combining salary data with skill frequency, I analyzed which skills offer both high earning potential and strong demand. Specifically, I calculated the average salary per skill and the number of job postings in which each skill appears, filtering out less relevant results by keeping only skills with more than 10 occurrences.
+
+```sql
+SELECT 
+    COUNT(job_postings_fact.*) AS demand_count,
+    skills,
+    ROUND(AVG(salary_year_avg), 0) AS avg_salary
+FROM job_postings_fact
+INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+WHERE salary_year_avg IS NOT NULL
+AND job_title_short = 'Data Analyst'
+GROUP BY skills
+HAVING COUNT(job_postings_fact.*) > 10
+ORDER BY 
+       avg_salary DESC,
+       demand_count DESC
+LIMIT 25
+```
+CONCLUSIONS
+
+# What I Learned
+
+Throughout this adventure, I've turbocharged my SQL toolkit with some serious firepower:
 
 
+
+# Conclusions
+
+### Insights
+From the analysis, several general insights emerged:
+
+1. **Top-Paying Data Analyst Jobs**: 
+2. **Skills for Top-Paying Jobs**: 
+3. **Most In-Demand Skills**: 
+4. **Skills with Higher Salaries**: 
+5. **Optimal Skills for Job Market Value**: 
+
+### Closing Thoughts
