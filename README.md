@@ -86,7 +86,9 @@ The IQR analysis identified 26 outliers, 25 of which correspond to the highest s
 
 Rather than indicating data errors, these values represent high-paying niche roles that naturally exist within the market. 
 
-<img width="751" height="451" alt="image" src="https://github.com/user-attachments/assets/ef7218a2-1dd8-4971-8fab-69646b4e7777" />
+<img width="536" height="351" alt="image" src="https://github.com/user-attachments/assets/8f98d104-b1c9-48fe-977a-485078174bec" />
+
+
 
 
 #### 🔎 Conclusion (Histogram + Outliers Interpretation)
