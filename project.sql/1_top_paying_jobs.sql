@@ -21,11 +21,21 @@ AND
     job_title_short = 'Data Analyst'
 ORDER BY 
     salary_year_avg DESC
-LIMIT 10
+--LIMIT 10
 
 /* First conclusions:
 - Best-paying remote jobs come from american companies
 - I would say the first job with a salary of $650.000 might be an outlier
 (salary is too high compared to the other 9 offers. */
 
+/* Determination of the outlier */
 
+SELECT 
+    job_title,
+    ROUND(salary_year_avg,0) AS salary
+FROM job_postings_fact
+WHERE 
+    job_title_short = 'Data Analyst'
+AND 
+    salary_year_avg IS NOT NULL
+ORDER BY salary DESC
