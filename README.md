@@ -55,13 +55,15 @@ LIMIT 10
 ```
 Here's the breakdown of the top data analyst jobs in 2023:
 
+EXCEL BAR CHART SALARY DIST
+
 * Nine out of the ten highest-paying remote Data Analyst positions in the dataset are offered by U.S.-based companies.
 * The highest reported salary ($650,000) may represent a potential outlier, as it is substantially higher than the second-highest salary ($335,000) and the rest of the dataset.
 * Excluding this potential outlier, the salary range among the remaining top-paying positions is considerably more consistent.
 
-#### Drill-down Analysis
+#### 🔎 Drill-down Analysis
 
-To evaluate whether the $650,000 salary could be considered a potential outlier, a separate query was executed to retrieve the full distribution of Data Analyst salaries. Unlike the previous analysis, this step focuses on raw salary values without joins or aggregations. The results were exported to Excel for further statistical analysis.
+To further investigate the highest-paying role identified in the initial query, a detailed dataset of remote Data Analyst job postings was extracted, focusing on raw salary values without joins or aggregations.
 
 ```sql
 SELECT 
@@ -72,13 +74,34 @@ WHERE
     job_title_short = 'Data Analyst'
 AND 
     salary_year_avg IS NOT NULL
+AND 
+    job_work_from_home IS TRUE
 ORDER BY salary DESC
 ```
+The resulting dataset (~600 records) was exported to Excel for statistical analysis.
 
-The results were exported to Excel to create charts and present the findings in a more accessible way.
+#### 🔗 Linking SQL Top 10 with IQR Analysis
 
-EXCEL CHART TO ADD 
-IS IT POSSIBLE TO CONFIRM OR NOT THROUGH EXCEL THE OUTLIER? --
+The exported salary distribution was analyzed using the Interquartile Range (IQR) method to assess whether the highest salary identified in the SQL query ($650,000) could be considered an anomaly.
+
+The IQR analysis identified 26 outliers, 25 of which correspond to the highest salary values in the dataset. This confirms that most of the top-paying roles identified in the SQL ranking fall within the extreme upper tail of a right-skewed salary distribution.
+
+Rather than indicating data errors, these values represent high-paying niche roles that naturally exist within the market. 
+
+<img width="536" height="351" alt="image" src="https://github.com/user-attachments/assets/8f98d104-b1c9-48fe-977a-485078174bec" />
+
+
+
+
+#### 🔎 Conclusion (Histogram + Outliers Interpretation)
+
+The histogram shows that the majority of Data Analyst salaries are concentrated between approximately $25,000 and $125,000, indicating a strong central distribution within this range. This reflects a relatively consistent salary band for most roles in the dataset.
+
+However, the distribution is highly right-skewed, with a small number of salaries extending beyond $600,000. These values are rare and have limited visual impact in the histogram due to their low frequency.
+
+The IQR analysis confirms that these extreme values are statistically identified as outliers. However, they do not indicate data errors, but rather represent highly specialized or senior-level roles that command significantly higher compensation than the market baseline.
+
+Overall, the salary distribution follows a typical labor market pattern, with a dense concentration of standard roles and a long tail of high-paying niche positions.
 
 
 ### 2. Skills for Top Paying Jobs
