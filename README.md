@@ -1,6 +1,36 @@
 # SQL Project Data Job Analysis
 
+## ## Introduction
 
+This project explores the Data Analytics job market in 2023 through SQL-based analysis. It was developed as part of a YouTube SQL course, which provided the datasets and the overall structure of the analysis.
+
+While following the course framework, I expanded several sections by conducting additional analyses whenever I felt a deeper investigation would provide more meaningful insights or help me better understand the data. This project therefore reflects both the course objectives and my own analytical approach to exploring salary trends, in-demand skills, and job market characteristics.
+
+🔍 SQL queries? Check them out here: [[project_sql folder](/project_sql/)](https://github.com/guillerminabasso/SQL_Project_Data_Job_Analysis/tree/main/project.sql)
+
+### The questions I wanted to answer through my SQL queries were:
+
+1. What are the top-paying data analyst jobs?
+2. What skills are required for these top-paying jobs?
+3. What skills are most in demand for data analysts?
+4. Which skills are associated with higher salaries?
+5. What are the most optimal skills to learn?
+
+## Tools I Used
+
+- **SQL:** Used to extract, clean, join, and analyze job posting data, allowing me to identify salary trends and in-demand skills.
+- **PostgreSQL:** The chosen database management system to query and analyze the dataset, uncovering trends in salaries, skills, and job demand.
+- **Visual Studio Code:** Used to write and manage SQL queries and organize the project's code and documentation.
+- **Git & GitHub:** Used for version control, project organization, and portfolio presentation.
+- **Excel:** Used to analyze the detailed dataset generated from the drill-down analysis and transform it into clear, easy-to-understand charts and visual summaries.
+- **ChatGPT:** supported the research process by helping me understand unfamiliar skills and technologies identified in the analysis.
+
+# The Analysis
+
+Each query for this project aimed at investigating specific aspects of the data analyst job market. Here’s the results:
+
+
+## 4. Top Paying Skills Analysis
 ## 4. Top Paying Skills Analysis
 
 This query calculates the average salary for each skill by joining the job_postings_fact, skills_job_dim, and skills_dim tables.
@@ -35,7 +65,6 @@ The following query retrieves all job postings associated with the top-paying sk
 
 ```sql
 WITH top_skills AS (
-
     SELECT 
         skills_dim.skill_id,
         skills,
