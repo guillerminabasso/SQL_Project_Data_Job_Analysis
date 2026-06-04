@@ -106,7 +106,79 @@ Overall, the salary distribution follows a typical labor market pattern, with a 
 
 ### 2. Skills for Top Paying Jobs
 
+To identify the skills associated with the 10 highest paying jobs, I joined the job postings dataset with the skills data in order to gain deeper insights into the key skills required for these roles.
+
+```sql
+WITH top_paying_jobs AS (
+
+    SELECT 
+        job_id,
+        job_title,
+        salary_year_avg as salary,
+        name AS company
+    FROM 
+        job_postings_fact
+    LEFT JOIN company_dim ON 
+        job_postings_fact.company_id = company_dim.company_id
+    WHERE 
+        salary_year_avg IS NOT NULL AND 
+        job_work_from_home IS TRUE AND 
+        job_title_short = 'Data Analyst'
+    ORDER BY 
+        salary_year_avg DESC
+    LIMIT 10
+    )
+
+SELECT
+    COUNT(*) as skills_count,
+    skills
+FROM top_paying_jobs
+INNER JOIN skills_job_dim ON 
+    top_paying_jobs.job_id = skills_job_dim.job_id
+INNER JOIN skills_dim ON 
+    skills_job_dim.skill_id = skills_dim.skill_id
+GROUP BY 
+    skills
+ORDER BY 
+    skills_count DESC
+```
+The results from this query were exported to Excel in order to create the following bar chart that shows which are the skills related to the de best paying jobs.
+
+EXCEL GRAPHIC CHART
+
+#### 🔎 Conclusion
+
+The results shows that the best .... 
+
 ### 3. In-Demand Skills for Data Analysts
+
+To identify the most in-demand skills for Data Analyst roles, I reused the joins from the previous analysis and grouped the data by skill. I then counted the number of job postings that included each skill to measure its demand across the dataset.
+
+```sql
+SELECT 
+    COUNT(*) AS demand_count,
+    skills
+FROM 
+    job_postings_fact
+INNER JOIN skills_job_dim ON 
+    job_postings_fact.job_id = skills_job_dim.job_id
+INNER JOIN skills_dim ON 
+    skills_job_dim.skill_id = skills_dim.skill_id
+WHERE 
+    job_title_short = 'Data Analyst'
+GROUP BY 
+    skills
+ORDER BY 
+    demand_count DESC
+LIMIT 5
+```
+The results were exported to Excel to create a bar chart illustrating the most in-demand skills for Data Analyst roles.
+
+EXCEL BAR CHART,
+
+#### 🔎 Conclusion
+
+CONCLUSIONS
 
 ### 4. Top Paying Skills Analysis
 
