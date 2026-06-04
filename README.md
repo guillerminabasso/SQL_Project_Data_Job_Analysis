@@ -29,7 +29,7 @@ While following the course framework, I expanded several sections by conducting 
 
 Each query for this project aimed at investigating specific aspects of the data analyst job market. Here’s the results:
 
-## 1. Top Paying Data Analyst Jobs
+### 1. Top Paying Data Analyst Jobs
 
 To identify the highest-paying roles, I filtered data analyst positions by average yearly salary and location, focusing on remote jobs. This query highlights the high paying opportunities in the field.
 
@@ -59,7 +59,7 @@ Here's the breakdown of the top data analyst jobs in 2023:
 * The highest reported salary ($650,000) may represent a potential outlier, as it is substantially higher than the second-highest salary ($335,000) and the rest of the dataset.
 * Excluding this potential outlier, the salary range among the remaining top-paying positions is considerably more consistent.
 
-### Drill-down Analysis
+#### Drill-down Analysis
 
 To evaluate whether the $650,000 salary could be considered a potential outlier, a separate query was executed to retrieve the full distribution of Data Analyst salaries. Unlike the previous analysis, this step focuses on raw salary values without joins or aggregations. The results were exported to Excel for further statistical analysis.
 
@@ -81,9 +81,12 @@ The results were exported to Excel to create charts and present the findings in 
 EXCEL CHART TO ADD 
 IS IT POSSIBLE TO CONFIRM OR NOT THROUGH EXCEL THE OUTLIER? --
 
-## 1. Top Paying Data Analyst Jobs
 
-## 4. Top Paying Skills Analysis
+### 2. Skills for Top Paying Jobs
+
+### 3. In-Demand Skills for Data Analysts
+
+### 4. Top Paying Skills Analysis
 
 This query calculates the average salary for each skill by joining the job_postings_fact, skills_job_dim, and skills_dim tables.
 It filters the dataset to include only Data Analyst roles with a valid salary value, and then computes the average salary per skill, returning the top 10 highest-paying skills.
@@ -102,14 +105,14 @@ ORDER BY salary DESC
 LIMIT 10
 ```
 
-### 📊 Key Insights
+#### 📊 Key Insights
 
 - SVN was identified as the highest-paying skill in the dataset.
 - Many of the top-paying skills are related to cloud infrastructure, software engineering, and machine learning rather than traditional analytics tools.
 - The findings suggest that higher-paying Data Analyst roles increasingly require technical skills that bridge analytics, engineering, and data science.
 - Developing expertise in programming, cloud technologies, and data engineering concepts may lead to access to higher-paying opportunities.
 
-### 🔎 Drill-Down Analysis
+#### 🔎 Drill-Down Analysis
 
 After identifying the top 10 highest-paying skills for Data Analyst roles, I performed a drill-down analysis to explore the job titles associated with these skills. This provided additional context beyond salary rankings and helped identify the types of roles driving higher compensation.
 
@@ -147,7 +150,7 @@ ORDER BY ts.salary DESC;
 
 ```
 
-### 🗂️ Background Dataset
+#### 🗂️ Background Dataset
 
 The drill-down query returned more than 30,000 rows.
 Due to the size of the dataset, the results were exported to Excel for further aggregation and visualization.
@@ -156,9 +159,9 @@ This allowed for a more flexible analysis of skill frequency and salary distribu
 <img width="551" height="365" alt="image" src="https://github.com/user-attachments/assets/9525df5b-cdfa-4c06-834b-1b2631080012" />
 
 
-### 📈 Excel Analysis
+#### 📈 Excel Analysis
 
-#### ⚙️Functions Used
+### ⚙️Functions Used
 
 **COUNTIF** was used to calculate the number of job postings associated with each skill.
 
