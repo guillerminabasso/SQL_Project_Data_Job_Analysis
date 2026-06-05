@@ -207,8 +207,7 @@ This confirms the already known typical path for a Data Analyst, which includes 
 
 ### 4. Top Paying Skills Analysis
 
-This query calculates the average salary for each skill by joining the job_postings_fact, skills_job_dim, and skills_dim tables.
-It filters the dataset to include only Data Analyst roles with a valid salary value, and then computes the average salary per skill, returning the top 10 highest-paying skills.
+For this query I kept the same filters from before (data analyst roles and salary not null) and the same joins, but this time I grouped the results by skill and average salary for those conditions, ordering the results from the highest salaries to the lowest. 
 
 ```sql
 SELECT 
@@ -335,6 +334,8 @@ ORDER BY
        demand_count DESC
 LIMIT 25
 ```
+
+FINISH HERE
 CONCLUSIONS
 
 # What I Learned
