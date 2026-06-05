@@ -6,7 +6,11 @@
 
 This project explores the Data Analytics job market in 2023 through SQL-based analysis. It was developed as part of a YouTube SQL course, which provided the datasets and the overall structure of the analysis.
 
-While following the course framework, I expanded several sections by conducting additional analyses whenever I felt a deeper investigation would provide more meaningful insights or help me better understand the data. This project therefore reflects both the course objectives and my own analytical approach to exploring salary trends, in-demand skills, and job market characteristics.
+While following the course framework, I expanded several sections by conducting additional analyses whenever I felt a deeper investigation would provide more meaningful insights or help me better understand the data and the tools involved.
+
+In addition to the SQL queries covered in the course, I performed supplementary analyses using Excel and basic statistical techniques, including salary distribution analysis, outlier detection using the Interquartile Range (IQR) method, and data visualization. These extensions allowed me to practice a broader set of data analytics skills and gain deeper insights into the job market.
+
+This project therefore reflects both the course objectives and my own analytical approach to exploring salary trends, in-demand skills, and job market characteristics.
 
 🔍 SQL queries? Check them out here: [[project_sql folder](/project_sql/)](https://github.com/guillerminabasso/SQL_Project_Data_Job_Analysis/tree/main/project.sql)
 
@@ -33,7 +37,7 @@ Each query for this project aimed at investigating specific aspects of the data 
 
 ### 1. Top Paying Data Analyst Jobs
 
-To identify the highest-paying roles, I filtered data analyst positions by average yearly salary and location, focusing on remote jobs. This query highlights the high paying opportunities in the field.
+To identify the highest-paying roles, I filtered data analyst positions by average yearly salary focusing on remote jobs and joined with the companies dataset. This query highlights the high paying opportunities in the field.
 
 ```sql
 SELECT 
@@ -57,15 +61,20 @@ LIMIT 10
 ```
 Here's the breakdown of the top data analyst jobs in 2023:
 
-EXCEL BAR CHART SALARY DIST
+<img width="496" height="299" alt="image" src="https://github.com/user-attachments/assets/cdc6953a-08ab-4951-920d-641d6f6a01c2" />
 
-* Nine out of the ten highest-paying remote Data Analyst positions in the dataset are offered by U.S.-based companies.
-* The highest reported salary ($650,000) may represent a potential outlier, as it is substantially higher than the second-highest salary ($335,000) and the rest of the dataset.
-* Excluding this potential outlier, the salary range among the remaining top-paying positions is considerably more consistent.
+<img width="717" height="182" alt="image" src="https://github.com/user-attachments/assets/483054bc-32fc-49a8-aaa3-be33bcefcc25" />
+
+
+First insights:
+1. Highest salary value is $650.0000, while the second highest salary is $400.000. I wonder if the first value could represent an outlier?
+2. The job with the highest salary is located in India, the following 9 are american-based companies.
+3. The companies associated with the 10 highest salaries represent different industries which shows a wide range of well-payed opportunities in different fields.
+
 
 #### 🔎 Drill-down Analysis
 
-To further investigate the highest-paying role identified in the initial query, a detailed dataset of remote Data Analyst job postings was extracted, focusing on raw salary values without joins or aggregations.
+To further investigate the highest-paying role identified in the initial query, a detailed dataset of remote Data Analyst job postings was extracted (LIMIT 10 from previous query was deleted), focusing on raw salary values without joins or aggregations.
 
 ```sql
 SELECT 
@@ -91,7 +100,6 @@ The IQR analysis identified 26 outliers, 25 of which correspond to the highest s
 Rather than indicating data errors, these values represent high-paying niche roles that naturally exist within the market. 
 
 <img width="536" height="351" alt="image" src="https://github.com/user-attachments/assets/8f98d104-b1c9-48fe-977a-485078174bec" />
-
 
 
 
@@ -144,13 +152,19 @@ GROUP BY
 ORDER BY 
     skills_count DESC
 ```
-The results from this query were exported to Excel in order to create the following bar chart that shows which are the skills related to the de best paying jobs.
+The results from this query were exported to Excel in order to create the following columns chart that shows which are the skills related to the de best paying jobs.
 
-EXCEL GRAPHIC CHART
+<img width="422" height="247" alt="image" src="https://github.com/user-attachments/assets/59df291e-8410-4478-a680-51b16ecc28ff" />
+
 
 #### 🔎 Conclusion
 
-The results shows that the best .... 
+The results show that:
+1. Eight out of ten of the best paying jobs include SQL as a skill to master.
+2. Seven out of ten of the best paying jobs include Python as a skill to master.
+3. Six out of ten of the best paying jobs include Tableau as a skill to master.
+4. The next skills associated to the best paying jobs are R, Snowflake, Pandas and Excel.
+This confirms that SQL, Python and Tableau are core skills for Data Analytics jobs, even on high positions (the ones with best paying jobs). 
 
 ### 3. In-Demand Skills for Data Analysts
 
