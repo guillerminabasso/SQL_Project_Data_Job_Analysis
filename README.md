@@ -327,8 +327,20 @@ ORDER BY
 LIMIT 25
 ```
 
-FINISH HERE
-CONCLUSIONS
+<img width="589" height="311" alt="image" src="https://github.com/user-attachments/assets/f3a86ec3-6fab-4cf3-a23b-5929947ba5d3" />
+
+
+### 💡 Insights
+
+The most optimal skills are those that balance both high demand and competitive salaries. This relationship is clearly visible in the chart, where several technologies form a cluster of strong performers across both dimensions.
+
+Skills such as Spark, Snowflake, Hadoop, Databricks, and GCP stand out by combining relatively high average salaries (approximately $110K–$130K range) with strong demand (roughly 100–250 job postings).
+
+Rather than a single dominant skill, the results suggest a group of “high-opportunity” technologies, primarily focused on data engineering and cloud infrastructure.
+
+Overall, this highlights a clear trend: the most valuable skills in the Data Analyst market are increasingly aligned with big data processing and cloud ecosystems, rather than traditional analytics tools alone.
+
+
 
 # What I Learned
 
