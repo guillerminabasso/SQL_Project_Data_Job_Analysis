@@ -155,7 +155,8 @@ ORDER BY
 ```
 The results from this query were exported to Excel in order to create the following columns chart that shows which are the skills related to the de best paying jobs.
 
-<img width="422" height="247" alt="image" src="https://github.com/user-attachments/assets/59df291e-8410-4478-a680-51b16ecc28ff" />
+<img width="421" height="245" alt="image" src="https://github.com/user-attachments/assets/c9ca7d7b-183b-4d5a-8dfb-7f80de3e3708" />
+
 
 
 #### 🔎 Conclusion
