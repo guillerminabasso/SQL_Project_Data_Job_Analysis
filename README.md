@@ -191,11 +191,19 @@ LIMIT 5
 ```
 The results were exported to Excel to create a bar chart illustrating the most in-demand skills for Data Analyst roles.
 
-EXCEL BAR CHART,
+<img width="437" height="275" alt="image" src="https://github.com/user-attachments/assets/c15faaf0-a2cc-41c8-a7aa-5ca9e80b459f" />
+
 
 #### 🔎 Conclusion
 
-CONCLUSIONS
+The results shown from the analysis say that:
+
+1. SQL is the skill with most appearande within all the job postings for Data Analyst roles. (93 000)
+2. Excel is the second skill with most appeareace within all the job postings for Data Analyst roles. (67 000)
+3. Python is the third skill with most appeareace within all the job postings for Data Analyst roles. (57 000)
+4. Tableau and PowerBI are the next most demanded skills.
+
+This confirms the already known typical path for a Data Analyst, which includes SQL, Excel, Python and PowerBI/Tableau as core skills for the roles. 
 
 ### 4. Top Paying Skills Analysis
 
