@@ -67,14 +67,14 @@ Here's the breakdown of the top data analyst jobs in 2023:
 
 
 First insights:
-1. Highest salary value is $650.0000, while the second highest salary is $400.000. I wonder if the first value could represent an outlier?
-2. The job with the highest salary is located in India, the following 9 are american-based companies.
-3. The companies associated with the 10 highest salaries represent different industries which shows a wide range of well-payed opportunities in different fields.
+1. The highest reported salary is $650,000, substantially higher than the second-highest salary of $400,000. This large gap suggests that further investigation may be needed to determine whether the top value represents an outlier or a legitimate high-paying position.
+2. Among the top 10 highest-paying remote Data Analyst roles, the highest-paid position is located in India, while the remaining nine positions are associated with companies based in the United States. This highlights the strong presence of U.S.-based opportunities within the highest salary range.
+3. The companies offering these top-paying positions operate across a variety of industries, suggesting that high compensation for Data Analysts is not limited to a single sector but can be found in diverse business domains.
 
 
 #### 🔎 Drill-down Analysis
 
-To further investigate the highest-paying role identified in the initial query, a detailed dataset of remote Data Analyst job postings was extracted (LIMIT 10 from previous query was deleted), focusing on raw salary values without joins or aggregations.
+To further investigate the highest-paying role identified in the initial query, a detailed dataset of remote Data Analyst job postings was extracted by removing the LIMIT 10 clause and focusing on raw salary values without joins or aggregations.
 
 ```sql
 SELECT 
@@ -93,26 +93,25 @@ The resulting dataset (~600 records) was exported to Excel for statistical analy
 
 #### 🔗 Linking SQL Top 10 with IQR Analysis
 
-The exported salary distribution was analyzed using the Interquartile Range (IQR) method to assess whether the highest salary identified in the SQL query ($650,000) could be considered an anomaly.
+The salary distribution was examined using the Interquartile Range (IQR) method to determine whether the highest salary identified in the SQL query ($650,000) should be considered an extreme anomaly.
 
-The IQR analysis identified 26 outliers, 25 of which correspond to the highest salary values in the dataset. This confirms that most of the top-paying roles identified in the SQL ranking fall within the extreme upper tail of a right-skewed salary distribution.
+The analysis identified 26 statistical outliers, most of which were concentrated in the upper end of the salary distribution. This indicates that many of the highest-paying roles returned by the SQL ranking fall outside the typical salary range for remote Data Analyst positions.
 
-Rather than indicating data errors, these values represent high-paying niche roles that naturally exist within the market. 
+While these salaries are statistically classified as outliers, they do not necessarily represent data errors. Instead, they appear to reflect a small subset of exceptionally well-compensated positions that exist within a highly right-skewed salary distribution. Consequently, the $650,000 salary can be interpreted as an extreme but plausible market observation rather than clear evidence of an invalid record. 
 
 <img width="535" height="351" alt="image" src="https://github.com/user-attachments/assets/ce679f5e-3cdb-44f4-8f77-30855c06ffd3" />
 
 
 
-
 #### 🔎 Conclusion (Histogram + Outliers Interpretation)
 
-The histogram shows that the majority of Data Analyst salaries are concentrated between approximately $25,000 and $125,000, indicating a strong central distribution within this range. This reflects a relatively consistent salary band for most roles in the dataset.
+The histogram shows that the majority of Data Analyst salaries are concentrated between approximately $25,000 and $125,000, indicating a strong central tendency within this range. This reflects a relatively consistent salary band for most roles in the dataset.
 
-However, the distribution is highly right-skewed, with a small number of salaries extending beyond $600,000. These values are rare and have limited visual impact in the histogram due to their low frequency.
+However, the distribution is highly right-skewed, with a small number of salaries extending beyond $600,000. These extreme values are rare and have limited visual influence on the histogram due to their low frequency, which compresses the visibility of the upper tail.
 
-The IQR analysis confirms that these extreme values are statistically identified as outliers. However, they do not indicate data errors, but rather represent highly specialized or senior-level roles that command significantly higher compensation than the market baseline.
+The IQR analysis confirms that these extreme values are statistically classified as outliers. However, this classification does not necessarily indicate data errors. Instead, they likely represent highly specialized, senior, or exceptional roles that command significantly higher compensation than the typical market range.
 
-Overall, the salary distribution follows a typical labor market pattern, with a dense concentration of standard roles and a long tail of high-paying niche positions.
+Overall, the salary distribution follows a common labor market pattern: a dense concentration of standard roles with a long right tail representing a small number of high-paying niche positions.
 
 
 ### 2. Skills for Top Paying Jobs
@@ -153,6 +152,7 @@ GROUP BY
 ORDER BY 
     skills_count DESC
 ```
+
 The results from this query were exported to Excel in order to create the following columns chart that shows which are the skills related to the de best paying jobs.
 
 <img width="421" height="245" alt="image" src="https://github.com/user-attachments/assets/c9ca7d7b-183b-4d5a-8dfb-7f80de3e3708" />
@@ -161,16 +161,20 @@ The results from this query were exported to Excel in order to create the follow
 
 #### 🔎 Conclusion
 
-The results show that:
-1. Eight out of ten of the best paying jobs include SQL as a skill to master.
-2. Seven out of ten of the best paying jobs include Python as a skill to master.
-3. Six out of ten of the best paying jobs include Tableau as a skill to master.
-4. The next skills associated to the best paying jobs are R, Snowflake, Pandas and Excel.
-This confirms that SQL, Python and Tableau are core skills for Data Analytics jobs, even on high positions (the ones with best paying jobs). 
+The results show the most frequently occurring skills across the 10 highest-paying Data Analyst roles:
+
+- **SQL** appears in 8 out of 10 job postings, making it the most common skill among top-paying roles.
+- **Python** appears in 7 out of 10 postings, highlighting its strong relevance for high-compensation positions.
+- **Tableau** appears in 6 out of 10 postings, indicating continued importance of data visualization tools at higher salary levels.
+- Other frequently appearing skills include R, Snowflake, Pandas, and Excel, which reflect a combination of statistical, cloud, and analytical toolsets.
+
+Overall, the results suggest that SQL, Python, and Tableau form a core skill set consistently associated with high-paying Data Analyst positions. However, this analysis reflects skill frequency within a small subset of top-paying roles, rather than universal job requirements across the entire market.
 
 ### 3. In-Demand Skills for Data Analysts
 
-To identify the most in-demand skills for Data Analyst roles, I reused the joins from the previous analysis and grouped the data by skill. I then counted the number of job postings that included each skill to measure its demand across the dataset.
+To identify the most in-demand skills for Data Analyst roles, I reused the joins from the previous analysis and grouped the data by skill. Unlike the previous sections, which focused only on remote positions, this analysis considers the entire dataset of job postings.
+
+I then counted the number of job postings that included each skill in order to measure its overall demand across the market.
 
 ```sql
 SELECT 
@@ -197,18 +201,18 @@ The results were exported to Excel to create a bar chart illustrating the most i
 
 #### 🔎 Conclusion
 
-The results shown from the analysis say that:
+The analysis of skill demand across Data Analyst job postings highlights the most frequently requested technical skills in the dataset.
 
-1. SQL is the skill with most appearande within all the job postings for Data Analyst roles. (93 000)
-2. Excel is the second skill with most appeareace within all the job postings for Data Analyst roles. (67 000)
-3. Python is the third skill with most appeareace within all the job postings for Data Analyst roles. (57 000)
-4. Tableau and PowerBI are the next most demanded skills.
+- **SQL** is the most in-demand skill, appearing in approximately 93,000 job postings, making it the dominant requirement for Data Analyst roles.
+- **Excel** ranks second, with around 67,000 mentions, reflecting its continued importance for data manipulation and reporting tasks.
+- **Python** is the third most requested skill, appearing in approximately 57,000 postings, highlighting its relevance for more advanced analytics and automation.
+- **Tableau** and **Power BI** follow as key data visualization tools frequently required by employers.
 
-This confirms the already known typical path for a Data Analyst, which includes SQL, Excel, Python and PowerBI/Tableau as core skills for the roles. 
+Overall, the results confirm that Data Analyst roles are primarily centered around SQL, Excel, Python, and BI tools (Tableau / Power BI), reinforcing a standard and widely recognized technical skill stack in the field.
 
 ### 4. Top Paying Skills Analysis
 
-For this query I kept the same filters from before (data analyst roles and salary not null) and the same joins, but this time I grouped the results by skill and average salary for those conditions, ordering the results from the highest salaries to the lowest. 
+For this analysis, I used the same filters as previous sections (Data Analyst roles with non-null salaries) and calculated the average salary associated with each skill. Unlike earlier analyses focused on job-level insights, this approach aggregates salary data at the skill level to identify which skills tend to appear in higher-paying roles.
 
 ```sql
 SELECT 
@@ -226,16 +230,14 @@ LIMIT 10
 
 #### 📊 Key Insights
 
-- SVN was identified as the highest-paying skill in the dataset.
-- Many of the top-paying skills are related to cloud infrastructure, software engineering, and machine learning rather than traditional analytics tools.
-- The findings suggest that higher-paying Data Analyst roles increasingly require technical skills that bridge analytics, engineering, and data science.
-- Developing expertise in programming, cloud technologies, and data engineering concepts may lead to access to higher-paying opportunities.
+- SVN appears as the highest-paying skill based on average salary within the dataset, although it is associated with a relatively small number of job postings.
+- Several of the top-paying skills are related to cloud infrastructure, engineering, and machine learning rather than traditional data analysis tools.
+- This suggests that higher compensation is often associated with hybrid roles that combine analytics with engineering or data infrastructure responsibilities.
+- As a result, expanding into programming, cloud technologies, and data engineering concepts may increase access to higher-paying opportunities.
 
 #### 🔎 Drill-Down Analysis
 
-After identifying the top 10 highest-paying skills for Data Analyst roles, I performed a drill-down analysis to explore the job titles associated with these skills. This provided additional context beyond salary rankings and helped identify the types of roles driving higher compensation.
-
-The following query retrieves all job postings associated with the top-paying skills, allowing for a deeper analysis of job title distribution and salary patterns.  
+To provide additional context, a second query was executed to link the top-paying skills back to individual job postings. This allows for a more granular understanding of job titles and salary distributions associated with each skill.
 
 ```sql
 WITH top_skills AS (
@@ -271,31 +273,18 @@ ORDER BY ts.salary DESC;
 
 #### 🗂️ Background Dataset
 
-The drill-down query returned more than 30,000 rows.
-Due to the size of the dataset, the results were exported to Excel for further aggregation and visualization.
-This allowed for a more flexible analysis of skill frequency and salary distribution at a granular level.
+The resulting dataset was exported to Excel due to its size (~30,000 rows), enabling further aggregation and visualization.
 
 <img width="551" height="365" alt="image" src="https://github.com/user-attachments/assets/9525df5b-cdfa-4c06-834b-1b2631080012" />
 
 
 #### 📈 Excel Analysis
 
-### ⚙️Functions Used
+Two complementary metrics were calculated:
 
-**COUNTIF** was used to calculate the number of job postings associated with each skill.
+Skill frequency using COUNTIF to measure how often each skill appears across job postings.
+Median salary per skill using MEDIAN(FILTER(...)) to reduce the influence of extreme values and better represent typical compensation levels.
 
-```
-=COUNTIF(top_skills[skills], A2)  
-```
-
-**MEDIAN** and **FILTER** were used to calculate the median salary associated with each skill.
-
-```
-
-
-=MEDIAN(FILTER(top_skills[salary], top_skills[skills]=D2))
-
-```
 
 <img width="200" height="160" alt="image" src="https://github.com/user-attachments/assets/03101759-ee5b-4c47-95bb-5dbe6ba27385" />  
 
@@ -307,11 +296,13 @@ The following combo chart was used to clearly illustrate the relationship betwee
 
 ### 💡 Insights
 
-SVN appears to be the highest-paying skill, with median salaries reaching up to $400K. However, it shows relatively low demand, with only around 1,000 job postings, indicating that it is a niche skill in the job market.
+The combined analysis reveals a clear distinction between salary and demand:
 
-On the other hand, Terraform stands out as the most in-demand skill, with approximately 20,000 job postings and a median salary of around $150K, reflecting strong demand in cloud-related roles.
+- **SVN** shows the highest median salary (~$400K), but appears in a limited number of job postings, suggesting a highly specialized niche skill.
+- **Terraform** stands out as the most in-demand skill, with approximately 20,000 job postings and a median salary around $150K, indicating strong relevance in cloud-related roles.
+- Most other top skills cluster between $100K and $200K, showing relatively stable compensation across widely used technologies.
 
-Overall, the chart highlights a clear trade-off between salary and demand: while SVN leads in compensation, it is highly specialized and less frequently required. In contrast, most other top skills cluster within a similar salary range of $100K–$200K, with Terraform emerging as the most widely requested skill among employers.
+Overall, the results highlight a trade-off between compensation and market demand, where niche skills tend to offer higher salaries but lower frequency, while widely adopted tools provide more consistent employment opportunities.
 
 
 ### 5. Most Optimal Skills to Learn
