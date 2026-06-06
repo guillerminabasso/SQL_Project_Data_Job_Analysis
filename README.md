@@ -1,4 +1,3 @@
------ FINISH 5. , REORGANIZE AND ADD CHARTS. SUM IT UP A BIT
 
 # SQL Project Data Job Analysis
 
