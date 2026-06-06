@@ -212,7 +212,7 @@ Overall, the results confirm that Data Analyst roles are primarily centered arou
 
 ### 4. Top Paying Skills Analysis
 
-For this analysis, I used the same filters as previous sections (Data Analyst roles with non-null salaries) and calculated the average salary associated with each skill. Unlike earlier analyses focused on job-level insights, this approach aggregates salary data at the skill level to identify which skills tend to appear in higher-paying roles.
+For this analysis, I used the same filters as the previous section (Data Analyst roles with non-null salaries) and calculated the average salary associated with each skill. Unlike earlier analyses focused on job-level insights, this approach aggregates salary data at the skill level to identify which skills tend to appear in higher-paying roles.
 
 ```sql
 SELECT 
@@ -286,13 +286,15 @@ Skill frequency using COUNTIF to measure how often each skill appears across job
 Median salary per skill using MEDIAN(FILTER(...)) to reduce the influence of extreme values and better represent typical compensation levels.
 
 
-<img width="200" height="160" alt="image" src="https://github.com/user-attachments/assets/03101759-ee5b-4c47-95bb-5dbe6ba27385" />  
+<img width="241" height="197" alt="image" src="https://github.com/user-attachments/assets/585584f2-4fbb-4d74-9fb7-c784a8af1e32" />
+
 
 ### 📈 Visualization
 
 The following combo chart was used to clearly illustrate the relationship between median salaries and skill demand across the top skills.
 
-<img width="360" height="217" alt="image" src="https://github.com/user-attachments/assets/91a091da-ad01-4877-a9f1-7fb9059dacb7" />  
+<img width="547" height="314" alt="image" src="https://github.com/user-attachments/assets/dc60bc3e-9359-40b4-95b2-381ac05eb166" />
+
 
 ### 💡 Insights
 
