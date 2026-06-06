@@ -168,7 +168,7 @@ The results show the most frequently occurring skills across the 10 highest-payi
 - **Tableau** appears in 6 out of 10 postings, indicating continued importance of data visualization tools at higher salary levels.
 - Other frequently appearing skills include R, Snowflake, Pandas, and Excel, which reflect a combination of statistical, cloud, and analytical toolsets.
 
-Overall, the results suggest that SQL, Python, and Tableau form a core skill set consistently associated with high-paying Data Analyst positions. However, this analysis reflects skill frequency within a small subset of top-paying roles, rather than universal job requirements across the entire market.
+This analysis demonstrates that core analytics tools such as SQL, Python, and Tableau remain highly relevant even in the highest-paying Data Analyst roles. At the same time, the presence of skills such as R, Snowflake, and Pandas suggests that employers increasingly value expertise that extends beyond traditional analytics and into areas such as cloud technologies, advanced data processing, and statistical analysis.
 
 ### 3. In-Demand Skills for Data Analysts
 
